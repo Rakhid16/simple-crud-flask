@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Lihat Data Buku{% endblock %}
+
+{% block content %}
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Nomor</th>
+        <th>Judul</th>
+        <th>Penulis</th>
+        <th>Jumlah</th>
+      </tr>
+    </thead>
+        
+     <tbody> {% for baris in data %}
+     <tr>
+       <th>{{ baris[0] }}</th>  
+       <th>{{ baris[1] }}</th>
+       <th>{{ baris[2] }}</th>
+       <th>{{ baris[3] }}</th>
+     </tr>
+     {% endfor %} </tbody>
+  </table> <br>
+
+  <a href="{{ url_for('tambah_data') }}">Tambah Buku</a><br>
+  <a href="{{ url_for('edit_data') }}">Edit Data Buku</a><br>
+  <a href="{{ url_for('hapus_data') }}">Hapus Buku</a><br><br>
+  <a href="{{ url_for('index') }}">Beranda</a>
+{% endblock %}

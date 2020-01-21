@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Hapus Data Buku{% endblock %}
+
+{% block content %}
+  <form method="POST">
+    <input type="integer" name="id" placeholder="Nomor Buku"><br>
+    <button type="submit">SUBMIT</button><br><br>
+  </form>
+
+  {{ pesan }}<br><br>
+
+  <a href="{{ url_for('lihat_data') }}">Lihat Buku</a><br>
+  <a href="{{ url_for('tambah_data') }}">Tambah Buku</a><br>
+  <a href="{{ url_for('edit_data') }}">Edit Data Buku</a><br><br>
+  <a href="{{ url_for('index') }}">Beranda</a><br>
+{% endblock %}
